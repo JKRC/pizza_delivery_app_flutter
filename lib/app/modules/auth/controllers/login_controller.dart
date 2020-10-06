@@ -19,15 +19,13 @@ class LoginController extends ChangeNotifier {
       final user = await _authRepository.login(email, password);
       final sp = await SharedPreferences.getInstance();
       sp.setString('user', user.toJson());
-      showLoader = false;
       loginSuccess = true;
     } on RestException catch (e) {
       error = e.message;
-      showLoader = false;
     } catch (e) {
       error = 'Erro ao autenticar usuário';
-      showLoader = false;
     } finally {
+      showLoader = false;
       notifyListeners();
     }
   }

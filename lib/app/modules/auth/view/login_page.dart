@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:pizza_delivery/app/modules/auth/controllers/login_controller.dart';
+import 'package:pizza_delivery/app/modules/auth/view/register_page.dart';
 import 'package:pizza_delivery/app/modules/splash/view/splash_page.dart';
 import 'package:pizza_delivery/app/shared/components/pizza_delivery_button.dart';
 import 'package:pizza_delivery/app/shared/components/pizza_delivery_input.dart';
@@ -127,6 +128,10 @@ class _LoginContentState extends State<LoginContent>
                     height: 50,
                   ),
                   FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          RegisterPage.router, (route) => false);
+                    },
                     child: Text(
                       'Cadastre-se',
                       style: TextStyle(fontSize: 20, fontFamily: 'Arial'),

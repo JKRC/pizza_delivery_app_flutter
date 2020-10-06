@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_delivery/app/modules/auth/view/login_page.dart';
+import 'package:pizza_delivery/app/modules/auth/view/register_page.dart';
 import 'package:pizza_delivery/app/modules/home/view/home_page.dart';
 import 'package:pizza_delivery/app/modules/splash/view/splash_page.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         SplashPage.router: (_) => SplashPage(),
         LoginPage.router: (_) => LoginPage(),
         HomePage.router: (_) => HomePage(),
+        RegisterPage.router: (_) => RegisterPage(),
       },
     );
   }
